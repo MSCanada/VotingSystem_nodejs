@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ <title><%= title %></title>
+<script src="/javascripts/jquery.min.js"></script> 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <style>
+#header {
+    
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;        
+}
+#section {
+    
+    float:left;
+    padding:10px;    
+}
+</style>
+  </head>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http:/index/">Polling Station</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+  </div><!-- /.container-fluid -->
+</nav>
+    <body>
+   <div id="header"></div>
+  <div id="nav"></div>
+  <div id="section">
+      <h3> Create New poll</h3>
+
+
+
+<form action="/poll" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Enter Question</label>
+    <input type="text" class="form-control" name="question" placeholder="Enter poll Question">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Enter Choices</label>
+    <input type="text" class="form-control" name="option1" placeholder="Choice 1">
+  </div>
+  <div class="form-group">
+    
+    <input type="text" class="form-control" name="option2" placeholder="Choice 2">
+  </div>
+  <div class="form-group">
+    
+    <input type="text" class="form-control" name="option3" placeholder="Choice 3">
+  </div>
+  <div class="form-group">
+   
+    <input type="text" class="form-control" name="option4" placeholder="Choice 4">
+  </div>
+  
+  
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<p><%=status%></p>
+
+<a href="http:/index/"  style="text-decoration: none"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Back To Main </a>
+    </div>
+</body>
+</html>

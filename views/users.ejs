@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  	
+    <title><%= title %></title>
+    
+    <link rel="stylesheet"  href="/stylesheets/main.css" />
+<script src="/javascripts/jquery.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	
+  <script src="/javascripts/jchart.js"></script>
+  <style>
+
+#nav {
+    line-height:30px;
+    
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;        
+}
+#section {
+    
+    float:left;
+    padding:10px;    
+}
+#question{
+  background-color:#eeeeee;
+width:1000px;
+    float:left;
+    padding:10px;
+
+}
+</style>
+  </head>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http:/index/">Polling Station</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+  </div><!-- /.container-fluid -->
+</nav>
+<div id="nav"></div>
+  <div id="section">
+  <body>
+    <h1><%= title %>
+      <a href="http:/users/"><img src="/images/interact.png" alt="HTML tutorial" style="width:30px;height:30px;border:0" ;></a></h1>
+   <br>
+    <br>
+    <div id="question">
+      <b>Question</b>
+    <p><%= question %></p>
+</div>
+    <div id="population_chart"></div>
+    <script>
+    
+
+    var question="<%= question %>";
+    var option1="<%= option1 %>";
+    var option2="<%= option2 %>";
+    var option3="<%= option3 %>";
+    var option4="<%= option4 %>";
+    var value1="<%= value1 %>";
+    var value2="<%= value2 %>";
+    var value3="<%= value3 %>";
+    var value4="<%= value4 %>";
+
+  
+$("#population_chart").jChart({
+
+		name: "",
+		headers: [option1,option2,option3,option4],
+		values: [value1,value2,value3,value4],
+		footers: [2,4,6,8,10],
+		colors: ["#1000ff","#006eff","#00b6ff","#00fff6"]
+	});
+	</script>
+  <a href="http:/index/"  style="text-decoration: none"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Back To Main </a>
+
+  <script type="text/javascript">
+$(document).ready(function(){
+
+//Check if the current URL contains '#' 
+if(document.URL.indexOf("#")==-1)
+{
+// Set the URL to whatever it was plus "#".
+url = document.URL+"#";
+location = "#";
+
+//Reload the page
+location.reload(true);
+
+}
+});
+</script> 
+
+  </body>
+</div>
+</html>
